@@ -240,6 +240,7 @@ CordovaLoader = {
       var pack = [],
             concatFile = '';
 //server/assets/app/cordova
+Logger.log('cordova', 'App Path: ',process.cwd()+" : "+appPath);
       fs.readFile(appPath + '/server/assets/app/cordova/' + platform + '.js', 'utf8', function (err, data) {
         if (err)
           Logger.log('error', 'error while reading file '+pluginJsFilePath);

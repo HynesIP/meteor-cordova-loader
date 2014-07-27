@@ -18,9 +18,9 @@ var fs = Npm.require('fs'),
       },
       compiledFiles = {};
 if(mode==="production"){
-      appPath = path.resolve('../'),
+      appPath = path.resolve('../');
 }else{
-      appPath = path.resolve('../../../../../'),
+      appPath = path.resolve('../../../../../');
 }
 // handle relative Cordova Project Paths
 if (appPath && cordovaProjectPath)

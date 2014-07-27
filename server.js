@@ -17,7 +17,11 @@ var fs = Npm.require('fs'),
         plugin: {}
       },
       compiledFiles = {};
-
+if(mode==="production"){
+      appPath = path.resolve('../'),
+}else{
+      appPath = path.resolve('../../../../../'),
+}
 // handle relative Cordova Project Paths
 if (appPath && cordovaProjectPath)
     cordovaProjectPath = path.resolve(appPath, cordovaProjectPath);
@@ -235,8 +239,8 @@ CordovaLoader = {
     platforms.forEach(function (platform) {
       var pack = [],
             concatFile = '';
-
-      fs.readFile(appPath + '/private/cordova/' + platform + '.js', 'utf8', function (err, data) {
+//server/assets/app/cordova
+      fs.readFile(appPath + '/server/assets/app/cordova/' + platform + '.js', 'utf8', function (err, data) {
         if (err)
           Logger.log('error', 'error while reading file '+pluginJsFilePath);
         else {
